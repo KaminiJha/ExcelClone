@@ -100,18 +100,50 @@
     width:calc(100vw - 25px);
     height: 25px;
     border:1px solid lightgray;
+    display: flex;
+    overflow: hidden;
+}
+.column-name
+{
+    min-width:100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid lightgrey;
 }
 .row-name-container
 {
-width:25px;
+max-width:25px;
 height:calc(74vh - 25px);
-border:1px solid lightgray;
+border:2px solid lightgray;
+overflow: hidden;
+margin:0;
+}
+.row-name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height:25px;
+    min-width: 25px;
+    border-bottom: 1px solid lightgray;
+    font-size: 12px;
+    padding:0px;
 }
 .cell-container
 {
     width:calc(100vw - 25px);
     height:calc(74vh - 25px);
     border:1px solid lightgray;
+    overflow: scroll;
+}
+.row-cell{
+    display:flex;
+}
+.input-cell{
+    border-bottom: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    min-height:25px;
+    min-width:100px;
 }
 /*sheet bar*/
 .sheet-bar
