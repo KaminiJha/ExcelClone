@@ -1,197 +1,221 @@
+/* generic styling */
 *{
-    margin:0;
     box-sizing: border-box;
-    overflow: hidden;
-
+    font-weight: 100;
 }
-.container
-{
-    height: 100vh;
+body{
+    margin:0px;
+font-family:sans-serif;
 }
-/*title-bar*/
-.title-bar{
-    height:5vh;
-    background-color: rgb(19,113,61);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color:#fff;
+select{
+    border: none;
+    padding-right: 0.5rem;
+    border-right: 1px solid;
+    outline:none;
 }
-/* menu-bar */
-.menu-bar
-{
-    height: 5vh;
-    background-color: rgb(19,113,61);
-    display: flex;
-
-}
-.menu-item{
-    color:#fff;
-    padding:0px 10px 0px 10px;
-    flex-direction: row;
+/* *******************menu *************bar */
+.menu_bar{
+    /* border: 2px solid red; */
+    /* background-color:brown; */
+    height:3rem;
+    width:100vw;
     display: flex;
     align-items: center;
 }
-.menu-item.selected
-{
-    background-color: #fff;
-    color:rgb(21, 156, 82);
+.menu_bar>*{
+    border-right:1px solid black;
+    height:70%;
+    display: flex;
+    justify-content:space-evenly;
+    align-items:center;
 }
-.menu-item:hover{
-    background-color: rgb(15, 95, 51);
-    cursor: pointer;
+.new_open_save_container{
+    width:22%;
 }
-.menu-item.selected:hover{
-    background-color: #fff;
+.formatting-container{
+    width:25%;
+}
+.font_family_input{
+    flex:2;
+    /* width: 66.6%; */
+
+}
+.font_size_input{
+    flex:1;
+    /* width:30.33%; */
+}
+
+.bui_container,.alignment_container,.color-container{
+    width:17%;
+
+}
+
+.fas{
+    font-size:1.4rem;
+    color: #2f3542;
+}
+
+.color-container{
+    border-right: none;
+}
+.bui_container>*, .alignment_container>*, .color_container>*{
+font-size: 1rem;
+}
+.selected{
+    background-color: #a28989;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgb(160 158 158);
+}
     
+
+    .icon_container{
+        height:60%
+    }
+    
+.formula_bar{
+    /* background-color:lightpink; */
+    height:2rem;
 }
-/* menu-icon-bar */
-.menu-icon-bar
-{
-    height:6vh;
+.sheets_container{
+    /* background-color:lightgoldenrodyellow; */
+    height:2.5rem;
     display: flex;
-    align-items: center;
-    background-color: rgb(240, 238, 238);
 }
-.menu-icons
-{
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-    padding-left: 10px;
-    padding-right:10px;
-}
-.menu-icons:hover{
-    background-color:rgb(231, 228, 228) ;
-    cursor: pointer;
-}
-.selector.font-family-selector
-{
-    width:150px;
-}
-.selector
-{
-    height:25px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-/*formula bar*/
-.formula-bar
-{
-    height:6vh;
-}
-/*data container*/
-.data-container
-{
-    height:74vh;
-    display: flex;
-    flex-wrap: wrap;
-}
-.select-all
-{
-    height:25px;
-    width:25px;
-    border:1px solid lightgray;
-}
-.col-name-container
-{
-    width:calc(100vw - 25px);
-    height: 25px;
-    border:1px solid lightgray;
-    display: flex;
-    overflow: hidden;
-}
-.column-name
-{
-    min-width:100px;
+/* sheets css */
+.add-sheet_container{
+    height: 100%;
+    min-width:30px;
+    border: 1px solid gray;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-right: 1px solid lightgrey;
 }
-.row-name-container
-{
-max-width:25px;
-height:calc(74vh - 25px);
-border:2px solid lightgray;
-overflow: hidden;
-margin:0;
-}
-.row-name{
+.sheets-list{
+
     display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height:25px;
-    min-width: 25px;
-    border-bottom: 1px solid lightgray;
-    font-size: 12px;
-    padding:0px;
+    height: 100%;
+    overflow-x: auto;
 }
-.cell-container
+.sheets-list::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .sheets-list {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+.sheet{
+    min-width:60px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border:1px solid;
+}
+.active-sheet
 {
-    width:calc(100vw - 25px);
-    height:calc(74vh - 25px);
-    border:1px solid lightgray;
+    background-color: gainsboro;
+}
+
+/* ************grid css************** */
+.grid_container{
+ height:calc(100vh - ( 5rem + 2rem + 2.5rem) );
+    /* background-color:lightgreen; */
     overflow: scroll;
 }
-.row-cell{
-    display:flex;
+.cell{
+    border:0.1px solid gray;
+    height:1.4rem;
+    text-align: center;
+    outline:none;
+    border-right:none;
+    border-top:none;
+    /* font-family: 'Courier New'; */
+    /* font-family: 'Franklin Gothic Medium'; */
+    /* font-family: 'Trebuchet MS'; */
+/* font-family: Georgia, 'Times New Roman', Times, serif; */
 }
-.input-cell{
-    border-bottom: 1px solid lightgray;
-    border-right: 1px solid lightgray;
-    min-height:25px;
-    min-width:100px;
-}
-/*sheet bar*/
-.sheet-bar
-{
-    height:4vh;
+.top_row{
     display: flex;
-    align-items: center;
+    position: relative;
+    left: 2rem;
+    top: -1.4rem;
 }
-.scroller{
-    width:70px;
+.top_row .cell{
+    text-align: center;
+    /* these cells are flexed  */
+    min-width:5rem;
+    padding-top: 0.21rem;;
+    font-size: 0.7rem;
+    border-top:0.1px solid gray;
+    background-color: #f1f2f6;
 }
-.icon-left-scroll,.icon-right-scroll
-{
-font-size: 22px;
+.left_col{
+    width: 2rem;
+    text-align: center;
+    position: relative;
+    top: -1.45rem;
+    background-color: #f1f2f6;
+
 }
-.icon-left-scroll:hover,.icon-right-scroll:hover
-{
-background-color: rgb(233, 231, 231);
-font-size: 30px;
-cursor:pointer;
+.left_col>.cell{
+    padding-top: 0.21rem;
+    font-size: 0.7rem;
 }
-.icon-add{
-    color:rgb(19,113,61);
-    font-size: 22px;
-    width:50px;
-}
-.icon-add:hover{
-    cursor: pointer;
-    transform: scale(1.1);
-}
-.sheet-tab-container{
-    width:calc(100vw - 120px);
-    border:1px solid rgb(231, 228, 228);
-}
-.sheet-tab
-{
-    border-bottom: 2px solid rgb(19,113,61);
-    padding-left: 10px;
-    padding-right: 10px;
-    width:80px;
-    height:20px;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    border-right: 1px solid rgb(216, 213, 213);
-}
-.sheet-tab:hover{
-    cursor: default;
+.top_left_cell{
+    height: 1.4rem;
+    width: 2rem;
+    border-right: 5px solid lightgray;
+    border-bottom: 5px solid lightgray;
+   
 }
 
+.row{    
+    display: flex;}
+.grid .cell{
+    min-width:5rem;
+    border:0.02px solid rgb(160, 158, 158);
+    border-top:none;
+    border-right: none;
+}
+.grid_container{
+    position: relative;
+}
+.grid{
+    position: absolute;
+    top: 1.35rem;
+    left: 2rem;
+}
+/* ***********formula bar ****************/
+.formula_bar{
+    display: flex;
+align-items: center;
+justify-content: center;
+border:none ;
+border-top:1px solid gray;
+}
+
+.formula_bar>*{
+    height:70%;
+    
+}
+.address_input{
+    width:4rem;
+    text-align: center;
+    border:none;
+    outline :none;
+    border-right: 0.5px solid gray;
+}
+.formula_input{
+    width:calc(100vw - 12rem );
+    border:none;
+    border-left:1px solid gray;
+    outline: none;
+}
+.formula_bar img{
+    display: inline-block;
+    height: 60%;
+    margin-right:0.2rem;
+    margin-left:1rem;
+}
